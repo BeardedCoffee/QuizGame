@@ -75,8 +75,8 @@ public class PreGameScreen
             switch (keyInfo.Key)
             {
                 case ConsoleKey.Oem2:
-                    exitScreen = true;
-                    break;
+                    new HomeScreen(currentLanguage);
+                    return;
                 case ConsoleKey.UpArrow:
                     selectedOption = (selectedOption - 1 + options.Length) % options.Length;
                     break;

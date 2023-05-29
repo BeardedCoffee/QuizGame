@@ -40,8 +40,8 @@ public class German : ILanguage
 
     public string Highscores => "Highscores";
 
-
     public string ChooseCategory => "Wähle eine Kategorie: ";
+
     public string ChooseMostQuestionsAnswered => "1. Meiste beantwortete Fragen";
 
     public string ChooseMostCorrectAnswers => "2. Meiste richtige Antworten";
@@ -99,4 +99,19 @@ public class German : ILanguage
     public string InvalidPassword => "Ungültiges Passwort. Bitte versuchen Sie es erneut.";
 
     public string Player => "Spieler:";
+
+    public string Answers => "Antworten: ";
+
+    public string WrongAnswersAmount => "Falsche Antworten: ";
+
+    public string Correct => "Richtig!";
+
+    public string Wrong => "Falsch!";
+
+    public string GameOver => "Spiel beendet!";
+
+    public string FinalResults => "Endergebnisse:";
+
+    public string Place => "Platz";
+
 }

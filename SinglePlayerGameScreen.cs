@@ -22,13 +22,16 @@ public class SinglePlayerGameScreen
     public void PlayGame()
     {
         int wrongAnswersCount = 0;
+        int correctAnswerCount = 0;
+        int questionsAnsweredCount = 0;
         List<string> wrongAnswerSymbols = new List<string>();
 
         foreach (Question question in questions)
         {
+            Console.WriteLine("Singleplayer");
             Console.WriteLine($"{currentLanguage.Player}: {player.Name}");
             Console.WriteLine(question.QuestionText);
-            Console.WriteLine("Antworten:");
+            Console.WriteLine(currentLanguage.Answers);
 
             int selectedAnswerIndex = 0;
             bool isValidInput = false;
@@ -50,7 +53,7 @@ public class SinglePlayerGameScreen
                     }
                 }
 
-                Console.Write("Wrong answers: ");
+                Console.Write(currentLanguage.WrongAnswersAmount);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write(string.Join(" ", wrongAnswerSymbols));
                 Console.ResetColor();
@@ -72,9 +75,10 @@ public class SinglePlayerGameScreen
                 }
 
                 Console.Clear();
+                Console.WriteLine("Multiplayer");
                 Console.WriteLine($"{currentLanguage.Player}: {player.Name}");
                 Console.WriteLine(question.QuestionText);
-                Console.WriteLine("Antworten:");
+                Console.WriteLine(currentLanguage.Answers);
 
             } while (!isValidInput);
 
@@ -83,23 +87,22 @@ public class SinglePlayerGameScreen
             if (userAnswer == question.CorrectAnswer)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Richtig!");
+                Console.WriteLine(currentLanguage.Correct);
                 Console.ResetColor();
-                player.CorrectAnswers++;
+                correctAnswerCount++;
             }
             else
             {
                 wrongAnswersCount++;
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Falsch!");
+                Console.WriteLine(currentLanguage.Wrong);
                 Console.ResetColor();
-                player.WrongAnswers++;
                 wrongAnswerSymbols.Add("[X]");
 
                 if (wrongAnswersCount > 3)
                 {
                     Console.WriteLine("Game Over!");
-                    PrintPlayerResult(wrongAnswerSymbols);
+                    PrintPlayerResult(correctAnswerCount, wrongAnswersCount, questionsAnsweredCount);
                     return;
                 }
             }
@@ -107,19 +110,13 @@ public class SinglePlayerGameScreen
             Console.Clear();
         }
 
-        player.AnsweredQuestions += questions.Count;
+        questionsAnsweredCount++;
 
-        Console.WriteLine("Spiel beendet!");
-        PrintPlayerResult(wrongAnswerSymbols);
+        PrintPlayerResult(correctAnswerCount, wrongAnswersCount, questionsAnsweredCount);
     }
 
-    private void PrintPlayerResult(List<string> wrongAnswerSymbols)
+    private void PrintPlayerResult(int correctAnswers, int wrongAnswers, int totalAnswers)
     {
-        Console.Write("Wrong answers: ");
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.Write(string.Join(" ", wrongAnswerSymbols));
-        Console.ResetColor();
-        Console.WriteLine();
-        Console.WriteLine();
+        new SingleplayerResultScreen(player, correctAnswers, wrongAnswers, totalAnswers, currentLanguage);
     }
 }

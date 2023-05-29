@@ -58,5 +58,14 @@ public interface ILanguage
     string Exit { get; }
 
     string Player { get; }
+    string Answers { get; }
+    string WrongAnswersAmount { get; }
+    string Correct { get; }
+    string Wrong { get; }
+
+    string GameOver { get; }
+
+    string FinalResults { get; }
+    string Place { get; }
 
 }

@@ -21,131 +21,139 @@ public class MultiplayerGameScreen
 
     public void PlayGame()
     {
-        Console.WriteLine("Multiplayer-Modus");
-
         int totalQuestions = questions.Count;
+
+        List<Player> activePlayers = new List<Player>(); 
+        foreach(Player p in players)
+        {
+            activePlayers.Add(p);
+        }
+
         List<int> wrongAnswerCounterList = new List<int>();
-        foreach (Player player in players)
+        List<int> correctAnswrCounterList = new List<int>();
+        List<int> questionsAnsweredCounterList = new List<int>();
+        foreach (Player player in activePlayers)
         {
             wrongAnswerCounterList.Add(0);
+            correctAnswrCounterList.Add(0);
+            questionsAnsweredCounterList.Add(0);
         }
 
         while (questions.Count > 0)
         {
-            foreach (Player currentPlayer in players)
+            foreach (Player currentPlayer in activePlayers)
             {
-                Question currentQuestion = questions[0];
-
-                Console.WriteLine($"{currentLanguage.Player}: {currentPlayer.Name}");
-                Console.WriteLine(currentQuestion.QuestionText);
-                Console.WriteLine("Antworten:");
-
-                int currentPlayerNr = players.IndexOf(currentPlayer);
-
-                int selectedAnswerIndex = 0;
-                bool isValidInput = false;
-
-                do
+                if (currentPlayer is not null)
                 {
-                    for (int i = 0; i < currentQuestion.Answers.Count; i++)
-                    {
-                        if (i == selectedAnswerIndex)
-                        {
-                            Console.Write("-> ");
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine(currentQuestion.Answers[i]);
-                            Console.ResetColor();
-                        }
-                        else
-                        {
-                            Console.WriteLine($"   {currentQuestion.Answers[i]}");
-                        }
-                    }
+                    Question currentQuestion = questions[0];
 
-                    Console.Write("Wrong answers: ");
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    for (int i = 0; i < wrongAnswerCounterList[currentPlayerNr]; i++)
-                    {
-                        if (wrongAnswerCounterList[currentPlayerNr] != 0)
-                        {
-                            Console.Write("[X] ");
-                        }
-                    }
-                    Console.ResetColor();
-                    Console.WriteLine();
-
-                    ConsoleKeyInfo keyInfo = Console.ReadKey();
-
-                    switch (keyInfo.Key)
-                    {
-                        case ConsoleKey.UpArrow:
-                            selectedAnswerIndex = (selectedAnswerIndex - 1 + currentQuestion.Answers.Count) % currentQuestion.Answers.Count;
-                            break;
-                        case ConsoleKey.DownArrow:
-                            selectedAnswerIndex = (selectedAnswerIndex + 1) % currentQuestion.Answers.Count;
-                            break;
-                        case ConsoleKey.Enter:
-                            isValidInput = true;
-                            break;
-                    }
-
-                    Console.Clear();
+                    Console.WriteLine("Multiplayer");
                     Console.WriteLine($"{currentLanguage.Player}: {currentPlayer.Name}");
                     Console.WriteLine(currentQuestion.QuestionText);
-                    Console.WriteLine("Antworten:");
+                    Console.WriteLine(currentLanguage.Answers);
 
-                } while (!isValidInput);
+                    int currentPlayerNr = activePlayers.IndexOf(currentPlayer);
 
-                int userAnswer = selectedAnswerIndex;
+                    int selectedAnswerIndex = 0;
+                    bool isValidInput = false;
 
-                if (userAnswer == currentQuestion.CorrectAnswer)
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Richtig!");
-                    Console.ResetColor();
-                    currentPlayer.CorrectAnswers++;
-                }
-                else
-                {
-                    wrongAnswerCounterList[currentPlayerNr]++;
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Falsch!");
-                    Console.ResetColor();
-                    currentPlayer.WrongAnswers++;
-
-                    if (wrongAnswerCounterList[currentPlayerNr] > 3)
+                    do
                     {
-                        Console.WriteLine("Game Over!");
-                        players.Remove(currentPlayer);
-                        Thread.Sleep(2000);
+                        for (int i = 0; i < currentQuestion.Answers.Count; i++)
+                        {
+                            if (i == selectedAnswerIndex)
+                            {
+                                Console.Write("-> ");
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine(currentQuestion.Answers[i]);
+                                Console.ResetColor();
+                            }
+                            else
+                            {
+                                Console.WriteLine($"   {currentQuestion.Answers[i]}");
+                            }
+                        }
+
+                        Console.Write(currentLanguage.WrongAnswersAmount);
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        for (int i = 0; i < wrongAnswerCounterList[currentPlayerNr]; i++)
+                        {
+                            if (wrongAnswerCounterList[currentPlayerNr] != 0)
+                            {
+                                Console.Write("[X] ");
+                            }
+                        }
+                        Console.ResetColor();
+                        Console.WriteLine();
+
+                        ConsoleKeyInfo keyInfo = Console.ReadKey();
+
+                        switch (keyInfo.Key)
+                        {
+                            case ConsoleKey.UpArrow:
+                                selectedAnswerIndex = (selectedAnswerIndex - 1 + currentQuestion.Answers.Count) % currentQuestion.Answers.Count;
+                                break;
+                            case ConsoleKey.DownArrow:
+                                selectedAnswerIndex = (selectedAnswerIndex + 1) % currentQuestion.Answers.Count;
+                                break;
+                            case ConsoleKey.Enter:
+                                isValidInput = true;
+                                break;
+                        }
+
                         Console.Clear();
-                        break;
+                        Console.WriteLine("Multiplayer");
+                        Console.WriteLine($"{currentLanguage.Player}: {currentPlayer.Name}");
+                        Console.WriteLine(currentQuestion.QuestionText);
+                        Console.WriteLine(currentLanguage.Answers);
+
+                    } while (!isValidInput);
+
+                    int userAnswer = selectedAnswerIndex;
+
+                    if (userAnswer == currentQuestion.CorrectAnswer)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine(currentLanguage.Correct);
+                        Console.ResetColor();
+                        correctAnswrCounterList[currentPlayerNr]++;
                     }
+                    else
+                    {
+                        wrongAnswerCounterList[currentPlayerNr]++;
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(currentLanguage.Wrong);
+                        Console.ResetColor();
+
+                        if (wrongAnswerCounterList[currentPlayerNr] > 3)
+                        {
+                            Console.WriteLine(currentLanguage.GameOver);
+                            activePlayers[activePlayers.IndexOf(currentPlayer)] = null;
+                            Thread.Sleep(2000);
+                            Console.Clear();
+                            break;
+                        }
+                    }
+
+                    questionsAnsweredCounterList[currentPlayerNr]++;
+
+                    questions.RemoveAt(0);
+
+                    Thread.Sleep(2000);
+                    Console.Clear();
                 }
-
-                currentPlayer.AnsweredQuestions++;
-
-                questions.RemoveAt(0);
-
-                Thread.Sleep(2000);
-                Console.Clear();
+            }
+            if (activePlayers.Count(player => player != null) == 0)
+            {
+                PrintPlayerResults(correctAnswrCounterList, wrongAnswerCounterList, questionsAnsweredCounterList);
             }
         }
 
-        Console.WriteLine("Spiel beendet!");
-        PrintPlayerResults();
+        PrintPlayerResults(correctAnswrCounterList, wrongAnswerCounterList, questionsAnsweredCounterList);
     }
 
-    private void PrintPlayerResults()
+    private void PrintPlayerResults(List<int> correctAnswers, List<int> wrongAnswers, List<int> totalAnswers)
     {
-        Console.WriteLine("Endergebnisse:");
-
-        foreach (Player player in players)
-        {
-            Console.WriteLine($"Spieler: {player.Name}");
-            Console.WriteLine($"Richtige Antworten: {player.CorrectAnswers}");
-            Console.WriteLine($"Falsche Antworten: {player.WrongAnswers}");
-            Console.WriteLine();
-        }
+        new MultiplayerResultScreen(players, correctAnswers, wrongAnswers, totalAnswers, currentLanguage);
     }
 }

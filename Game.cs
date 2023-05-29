@@ -14,7 +14,8 @@ public class Game
         this.difficultyLevel = difficultyLevel;
         this.timeLimit = timeLimit;
         currentLanguage = language;
-        selectedQuestions = GetAllQuestions();
+        selectedQuestions = GetAllQuestionsAndSelect();
+        selectedQuestions = Shuffle(selectedQuestions);
         StartGame();
     }
 
@@ -31,11 +32,28 @@ public class Game
         }
     }
 
-    private List<Question> GetAllQuestions()
+    private List<Question> GetAllQuestionsAndSelect()
     {
         QuestionSelector questionSelector = new QuestionSelector(currentLanguage);
         selectedQuestions = questionSelector.GetQuestions(difficultyLevel);
 
         return selectedQuestions;
+    }
+
+    private List<Question> Shuffle(List<Question> questions)
+    {
+        Random random = new Random();
+
+        int n = questions.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = random.Next(n + 1);
+            Question value = questions[k];
+            questions[k] = questions[n];
+            questions[n] = value;
+        }
+
+        return questions;
     }
 }

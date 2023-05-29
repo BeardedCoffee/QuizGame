@@ -99,4 +99,18 @@ public class English : ILanguage
     public string InvalidPassword => "Invalid password. Please try again.";
 
     public string Player => "Player:";
+
+    public string Answers => "Answers: ";
+
+    public string WrongAnswersAmount => "Wrong Answers: ";
+
+    public string Correct => "Correct!";
+
+    public string Wrong => "Wrong!";
+
+    public string GameOver => "Game over!";
+
+    public string FinalResults => "Final results:";
+
+    public string Place => "Place";
 }
