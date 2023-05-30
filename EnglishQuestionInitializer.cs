@@ -1,13 +1,13 @@
 namespace QuizGame;
 
-public class EnglishQuestionInitializer
+public class EnglishQuestionInitializer : QuestionInitializer
 {
     public EnglishQuestionInitializer()
     {
 
     }
 
-    public List<Question> Initialize()
+    public override List<Question> Initialize()
     {
         List<Question> questions = new List<Question>();
 
