@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TestRun id="565bce20-76ad-4525-9923-1ded9a40494a" name="marvi@DESKTOP-BB8HB2E 2023-05-30 20:57:59" runUser="DESKTOP-BB8HB2E\marvi" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
-  <Times creation="2023-05-30T20:57:59.4574091+02:00" queuing="2023-05-30T20:57:59.4574098+02:00" start="2023-05-30T20:57:58.4035089+02:00" finish="2023-05-30T20:57:59.4582549+02:00" />
-  <TestSettings name="default" id="c70e0ac9-aa21-4615-9fae-3da1a10f6d73">
-    <Deployment runDeploymentRoot="marvi_DESKTOP-BB8HB2E_2023-05-30_20_57_59" />
+<TestRun id="12a92a29-b02b-422a-8be1-7b8a4cef1e67" name="marvi@DESKTOP-BB8HB2E 2023-05-30 22:49:50" runUser="DESKTOP-BB8HB2E\marvi" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2023-05-30T22:49:50.9827725+02:00" queuing="2023-05-30T22:49:50.9827728+02:00" start="2023-05-30T22:49:50.3813069+02:00" finish="2023-05-30T22:49:50.9836136+02:00" />
+  <TestSettings name="default" id="34f0777b-67a0-4970-929c-cb8a152646d0">
+    <Deployment runDeploymentRoot="marvi_DESKTOP-BB8HB2E_2023-05-30_22_49_50" />
   </TestSettings>
   <TestLists>
     <TestList name="Ergebnisse nicht in einer Liste" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
