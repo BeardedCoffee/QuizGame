@@ -32,7 +32,7 @@ public class Game
         }
     }
 
-    private List<Question> GetAllQuestionsAndSelect()
+    public List<Question> GetAllQuestionsAndSelect()
     {
         QuestionSelector questionSelector = new QuestionSelector(currentLanguage);
         selectedQuestions = questionSelector.GetQuestions(difficultyLevel);
@@ -40,7 +40,7 @@ public class Game
         return selectedQuestions;
     }
 
-    private List<Question> Shuffle(List<Question> questions)
+    public List<Question> Shuffle(List<Question> questions)
     {
         Random random = new Random();
 

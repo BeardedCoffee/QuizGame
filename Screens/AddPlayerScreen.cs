@@ -134,7 +134,7 @@ public class AddPlayerScreen
         return false;
     }
 
-    private static void AddPlayer(Player player)
+    public static void AddPlayer(Player player)
     {
         string playerData = $"{player.Name},{player.Password},0,0,0,0";
         File.AppendAllText(PlayerFilePath, playerData + Environment.NewLine);

@@ -13,3 +13,8 @@ C:\Users\marvi\OneDrive\Desktop\Development\QuizGame\obj\Debug\net6.0\refint\Qui
 C:\Users\marvi\OneDrive\Desktop\Development\QuizGame\obj\Debug\net6.0\QuizGame.pdb
 C:\Users\marvi\OneDrive\Desktop\Development\QuizGame\obj\Debug\net6.0\QuizGame.genruntimeconfig.cache
 C:\Users\marvi\OneDrive\Desktop\Development\QuizGame\obj\Debug\net6.0\ref\QuizGame.dll
+C:\Users\marvi\OneDrive\Desktop\Development\QuizGame\bin\Debug\net6.0\xunit.abstractions.dll
+C:\Users\marvi\OneDrive\Desktop\Development\QuizGame\bin\Debug\net6.0\xunit.assert.dll
+C:\Users\marvi\OneDrive\Desktop\Development\QuizGame\bin\Debug\net6.0\xunit.core.dll
+C:\Users\marvi\OneDrive\Desktop\Development\QuizGame\bin\Debug\net6.0\xunit.execution.dotnet.dll
+C:\Users\marvi\OneDrive\Desktop\Development\QuizGame\obj\Debug\net6.0\QuizGame.csproj.CopyComplete

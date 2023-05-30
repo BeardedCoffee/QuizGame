@@ -13,4 +13,14 @@
     <SourceRoot Include="C:\Users\marvi\.nuget\packages\" />
     <SourceRoot Include="C:\Users\marvi\AppData\Roaming\Godot\mono\GodotNuGetFallbackFolder\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)xunit.runner.console\2.4.2\build\xunit.runner.console.props" Condition="Exists('$(NuGetPackageRoot)xunit.runner.console\2.4.2\build\xunit.runner.console.props')" />
+    <Import Project="$(NuGetPackageRoot)xunit.core\2.4.2\build\xunit.core.props" Condition="Exists('$(NuGetPackageRoot)xunit.core\2.4.2\build\xunit.core.props')" />
+    <Import Project="$(NuGetPackageRoot)reportgenerator\5.1.21\build\netstandard2.0\ReportGenerator.props" Condition="Exists('$(NuGetPackageRoot)reportgenerator\5.1.21\build\netstandard2.0\ReportGenerator.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Pkgxunit_runner_console Condition=" '$(Pkgxunit_runner_console)' == '' ">C:\Users\marvi\.nuget\packages\xunit.runner.console\2.4.2</Pkgxunit_runner_console>
+    <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">C:\Users\marvi\.nuget\packages\xunit.analyzers\1.0.0</Pkgxunit_analyzers>
+    <PkgReportGenerator Condition=" '$(PkgReportGenerator)' == '' ">C:\Users\marvi\.nuget\packages\reportgenerator\5.1.21</PkgReportGenerator>
+  </PropertyGroup>
 </Project>

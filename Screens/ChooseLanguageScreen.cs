@@ -89,7 +89,7 @@ public class ChooseLanguageScreen
         }
     }
 
-    private static ILanguage GetSelectedLanguage(int selectedOption)
+    public static ILanguage GetSelectedLanguage(int selectedOption)
     {
         int index = 0;
         foreach (var option in languageOptions)
