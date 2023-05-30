@@ -117,6 +117,8 @@ public class SinglePlayerGameScreen
 
     private void PrintPlayerResult(int correctAnswers, int wrongAnswers, int totalAnswers)
     {
-        new SingleplayerResultScreen(player, correctAnswers, wrongAnswers, totalAnswers, currentLanguage);
+        ResultScreen resultScreen = new SingleplayerResultScreen(player, correctAnswers, wrongAnswers, totalAnswers, currentLanguage);
+        resultScreen.DisplayResults();
+        return;
     }
 }

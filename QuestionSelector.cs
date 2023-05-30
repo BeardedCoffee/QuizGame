@@ -16,12 +16,12 @@ public class QuestionSelector
 
         if (currentLanguage is German)
         {
-            GermanQuestionInitializer initializer = new GermanQuestionInitializer();
+            QuestionInitializer initializer = new GermanQuestionInitializer();
             allQuestions = initializer.Initialize();
         }
         else if (currentLanguage is English)
         {
-            EnglishQuestionInitializer initializer = new EnglishQuestionInitializer();
+            QuestionInitializer initializer = new EnglishQuestionInitializer();
             allQuestions = initializer.Initialize();
         }
 

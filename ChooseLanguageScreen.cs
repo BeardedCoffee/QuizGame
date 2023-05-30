@@ -51,7 +51,6 @@ public class ChooseLanguageScreen
                 {
                     Console.Clear();
                     UpdateLanguage(selectedLanguage);
-                    PrintLanguageUpdateMessage(selectedLanguage);
                     Console.WriteLine();
                     Console.WriteLine(currentLanguage.PressButtonToContinue);
                     Console.ReadKey();
@@ -107,10 +106,5 @@ public class ChooseLanguageScreen
     private void UpdateLanguage(ILanguage language)
     {
         currentLanguage = language;
-    }
-
-    private static void PrintLanguageUpdateMessage(ILanguage language)
-    {
-        Console.WriteLine("");
     }
 }
