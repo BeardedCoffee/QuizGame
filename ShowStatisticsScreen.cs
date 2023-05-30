@@ -3,7 +3,6 @@ namespace QuizGame;
 public class ShowStatisticsScreen
 {
     private ILanguage currentLanguage;
-    private const string PlayerFilePath = "players.csv";
     private static List<Player> players;
     private bool playerListScreen;
     private bool showPlayerStatsScreen;
@@ -117,25 +116,7 @@ public class ShowStatisticsScreen
 
     private static void LoadPlayers()
     {
-        players = new List<Player>();
-
-        if (File.Exists(PlayerFilePath))
-        {
-            string[] lines = File.ReadAllLines(PlayerFilePath);
-            foreach (string line in lines)
-            {
-                string[] parts = line.Split(',');
-                Player player = new Player
-                {
-                    Name = parts[0],
-                    Password = parts[1],
-                    AnsweredQuestions = int.Parse(parts[2]),
-                    CorrectAnswers = int.Parse(parts[3]),
-                    WrongAnswers = int.Parse(parts[4]),
-                    MultiplayerWins = int.Parse(parts[5])
-                };
-                players.Add(player);
-            }
-        }
+        PlayerLoader playerLoader = new PlayerLoader();
+        players = playerLoader.LoadPlayers();
     }
 }
