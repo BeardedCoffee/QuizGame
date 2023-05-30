@@ -5,7 +5,7 @@ using System.Text;
 public class PreGameScreen
 {
     private ILanguage currentLanguage;
-    private const string PlayerFilePath = "players.csv";
+    private const string PlayerFilePath = "Data/players.csv";
     private static List<Player> players;
     private bool[] selectedPlayers;
     private int currentDifficultyLevel;

@@ -3,7 +3,7 @@ namespace QuizGame;
 public class AddPlayerScreen
 {
     private ILanguage currentLanguage;
-    private const string PlayerFilePath = "players.csv";
+    private const string PlayerFilePath = "Data/players.csv";
 
     public AddPlayerScreen(ILanguage language)
     {

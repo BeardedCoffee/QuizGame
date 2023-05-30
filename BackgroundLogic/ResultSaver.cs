@@ -2,7 +2,7 @@ namespace QuizGame;
 
 public class ResultSaver
 {
-    private const string PlayerFilePath = "players.csv";
+    private const string PlayerFilePath = "Data/players.csv";
 
     public ResultSaver()
     {
