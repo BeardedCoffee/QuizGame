@@ -1,25 +1,14 @@
 namespace QuizGame;
 
-public class MultiplayerResultScreen
+public class MultiplayerResultScreen : ResultScreen
 {
-    List<Player> players;
-    List<int> correctAnswers;
-    List<int> wrongAnswers;
-    List<int> totalAnswers;
-    ILanguage currentLanguage;
-
     public MultiplayerResultScreen(List<Player> players, List<int> correctAnswers, List<int> wrongAnswers, List<int> totalAnswers, ILanguage language)
+    : base(players, correctAnswers, wrongAnswers, totalAnswers, language)
     {
-        this.players = players;
-        this.correctAnswers = correctAnswers;
-        this.wrongAnswers = wrongAnswers;
-        this.totalAnswers = totalAnswers;
-        currentLanguage = language;
 
-        ShowResults();
     }
 
-    private void ShowResults()
+    public override void DisplayResults()
     {
         Console.Clear();
         Console.WriteLine(currentLanguage.FinalResults);
@@ -30,12 +19,13 @@ public class MultiplayerResultScreen
         for (int place = 1; place <= totalPlayers; place++)
         {
             ResultSaver resultSaver = new ResultSaver();
-            if(place == 1)
+            if (place == 1)
             {
-            resultSaver.SaveResults(players[place-1].Name, totalAnswers[place-1], correctAnswers[place-1], wrongAnswers[place-1], true);
-            }else
+                resultSaver.SaveResults(players[place - 1].Name, totalAnswers[place - 1], correctAnswers[place - 1], wrongAnswers[place - 1], true);
+            }
+            else
             {
-            resultSaver.SaveResults(players[place-1].Name, totalAnswers[place-1], correctAnswers[place-1], wrongAnswers[place-1], false);
+                resultSaver.SaveResults(players[place - 1].Name, totalAnswers[place - 1], correctAnswers[place - 1], wrongAnswers[place - 1], false);
             }
 
             int highestCorrectAnswers = correctAnswers.Max();

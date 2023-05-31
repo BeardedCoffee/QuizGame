@@ -154,6 +154,8 @@ public class MultiplayerGameScreen
 
     private void PrintPlayerResults(List<int> correctAnswers, List<int> wrongAnswers, List<int> totalAnswers)
     {
-        new MultiplayerResultScreen(players, correctAnswers, wrongAnswers, totalAnswers, currentLanguage);
+        ResultScreen resultScreen = new MultiplayerResultScreen(players, correctAnswers, wrongAnswers, totalAnswers, currentLanguage);
+        resultScreen.DisplayResults();
+        return;
     }
 }

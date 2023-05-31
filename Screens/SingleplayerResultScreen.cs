@@ -10,15 +10,15 @@ public class SingleplayerResultScreen : ResultScreen
         public override void DisplayResults()
         {
             ResultSaver resultSaver = new ResultSaver();
-            resultSaver.SaveResults(player.Name, totalAnswers, correctAnswers, wrongAnswers, false);
+            resultSaver.SaveResults(players[0].Name, totalAnswers[0], correctAnswers[0], wrongAnswers[0], false);
 
             Console.Clear();
             Console.WriteLine(currentLanguage.FinalResults);
             Console.WriteLine();
 
-            Console.WriteLine($"{currentLanguage.Player} {player.Name}");
-            Console.WriteLine($"{currentLanguage.CorrectAnswers} {correctAnswers}");
-            Console.WriteLine($"{currentLanguage.WrongAnswers} {wrongAnswers}");
+            Console.WriteLine($"{currentLanguage.Player} {players[0].Name}");
+            Console.WriteLine($"{currentLanguage.CorrectAnswers} {correctAnswers[0]}");
+            Console.WriteLine($"{currentLanguage.WrongAnswers} {wrongAnswers[0]}");
             Console.WriteLine();
             Console.WriteLine(currentLanguage.PressButtonToContinue);
             Console.ReadKey();

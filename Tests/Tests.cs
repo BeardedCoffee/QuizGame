@@ -155,12 +155,7 @@ namespace QuizGame.Tests
         {
             // Arrange
             var game = new Game(null, 1, 0, new German());
-            List<Question> questions = new List<Question>()
-            {
-                new Question { QuestionText = "Question 1" },
-                new Question { QuestionText = "Question 2" },
-                new Question { QuestionText = "Question 3" }
-            };
+            List<Question> questions = new FakeQuestionList();
 
             // Act
             List<Question> shuffledQuestions = game.Shuffle(questions);
