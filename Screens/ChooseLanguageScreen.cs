@@ -38,39 +38,44 @@ public class ChooseLanguageScreen
 
             if (keyInfo.Key == ConsoleKey.UpArrow && selectedOption > 0)
             {
-                selectedOption--;
+                MoveSelectionUp(ref selectedOption);
             }
             else if (keyInfo.Key == ConsoleKey.DownArrow && selectedOption < languageOptions.Count - 1)
             {
-                selectedOption++;
+                MoveSelectionDown(ref selectedOption);
             }
             else if (keyInfo.Key == ConsoleKey.Enter)
             {
                 ILanguage selectedLanguage = GetSelectedLanguage(selectedOption);
                 if (selectedLanguage != null)
                 {
-                    Console.Clear();
-                    UpdateLanguage(selectedLanguage);
-                    Console.WriteLine();
-                    Console.WriteLine(currentLanguage.PressButtonToContinue);
-                    Console.ReadKey();
-                    new HomeScreen(currentLanguage);
+                    HandleLanguageSelection(selectedLanguage);
                     return;
                 }
             }
             else if (keyInfo.KeyChar == '#')
             {
-                new HomeScreen(currentLanguage);
+                ReturnToHomeScreen();
                 return;
             }
             else
             {
-                Console.WriteLine(currentLanguage.InvalidLanguage);
+                PrintInvalidLanguage();
             }
         } while (true);
     }
 
-    private static void PrintLanguageOptions(int selectedOption)
+    private void MoveSelectionUp(ref int selectedOption)
+    {
+        selectedOption--;
+    }
+
+    private void MoveSelectionDown(ref int selectedOption)
+    {
+        selectedOption++;
+    }
+
+    private void PrintLanguageOptions(int selectedOption)
     {
         int index = 0;
         foreach (var option in languageOptions)
@@ -87,6 +92,26 @@ public class ChooseLanguageScreen
             }
             index++;
         }
+    }
+
+    private void HandleLanguageSelection(ILanguage selectedLanguage)
+    {
+        Console.Clear();
+        UpdateLanguage(selectedLanguage);
+        Console.WriteLine();
+        Console.WriteLine(currentLanguage.PressButtonToContinue);
+        Console.ReadKey();
+        ReturnToHomeScreen();
+    }
+
+    private void ReturnToHomeScreen()
+    {
+        new HomeScreen(currentLanguage);
+    }
+
+    private void PrintInvalidLanguage()
+    {
+        Console.WriteLine(currentLanguage.InvalidLanguage);
     }
 
     public static ILanguage GetSelectedLanguage(int selectedOption)
