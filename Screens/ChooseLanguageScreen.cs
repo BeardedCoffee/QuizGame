@@ -12,10 +12,10 @@ public class ChooseLanguageScreen
     public ChooseLanguageScreen(ILanguage language)
     {
         currentLanguage = language;
-        ChooseLanguageScreenProcessInput();
+        HandleLanguageSelectionInput();
     }
 
-    private void ChooseLanguageScreenProcessInput()
+    private void HandleLanguageSelectionInput()
     {
         Console.WriteLine(currentLanguage.LanguageSelection);
         Console.WriteLine("------------------");
