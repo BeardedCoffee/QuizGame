@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OYlh1CMiIaN3M16EbBAmsba1gW+qjsBoSxVufLAVdBYKp8EnUff2EOqGeBYiH1rzy5ftapt9/MjED8gOj3Kx0A==",
+  "dgSpecHash": "wTFYfpUAU3fWAXpsOH4Bm+bmxXHLaNalq2AhR6RodB70EUG/qGvwGALsMAxCUwaTzutKC5t10qE/sv98e884Ng==",
   "success": true,
   "projectFilePath": "C:\\Users\\marvi\\OneDrive\\Desktop\\Development\\QuizGame\\QuizGame.csproj",
   "expectedPackageFiles": [
@@ -43,13 +43,14 @@
     "C:\\Users\\marvi\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\marvi\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\marvi\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
-    "C:\\Users\\marvi\\.nuget\\packages\\runtime.win.microsoft.win32.primitives\\4.3.0\\runtime.win.microsoft.win32.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\marvi\\.nuget\\packages\\runtime.win.system.console\\4.3.0\\runtime.win.system.console.4.3.0.nupkg.sha512",
-    "C:\\Users\\marvi\\.nuget\\packages\\runtime.win.system.diagnostics.debug\\4.3.0\\runtime.win.system.diagnostics.debug.4.3.0.nupkg.sha512",
-    "C:\\Users\\marvi\\.nuget\\packages\\runtime.win.system.io.filesystem\\4.3.0\\runtime.win.system.io.filesystem.4.3.0.nupkg.sha512",
-    "C:\\Users\\marvi\\.nuget\\packages\\runtime.win.system.net.primitives\\4.3.0\\runtime.win.system.net.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\marvi\\.nuget\\packages\\runtime.win.system.net.sockets\\4.3.0\\runtime.win.system.net.sockets.4.3.0.nupkg.sha512",
-    "C:\\Users\\marvi\\.nuget\\packages\\runtime.win.system.runtime.extensions\\4.3.0\\runtime.win.system.runtime.extensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\marvi\\.nuget\\packages\\runtime.unix.microsoft.win32.primitives\\4.3.0\\runtime.unix.microsoft.win32.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\marvi\\.nuget\\packages\\runtime.unix.system.console\\4.3.0\\runtime.unix.system.console.4.3.0.nupkg.sha512",
+    "C:\\Users\\marvi\\.nuget\\packages\\runtime.unix.system.diagnostics.debug\\4.3.0\\runtime.unix.system.diagnostics.debug.4.3.0.nupkg.sha512",
+    "C:\\Users\\marvi\\.nuget\\packages\\runtime.unix.system.io.filesystem\\4.3.0\\runtime.unix.system.io.filesystem.4.3.0.nupkg.sha512",
+    "C:\\Users\\marvi\\.nuget\\packages\\runtime.unix.system.net.primitives\\4.3.0\\runtime.unix.system.net.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\marvi\\.nuget\\packages\\runtime.unix.system.net.sockets\\4.3.0\\runtime.unix.system.net.sockets.4.3.0.nupkg.sha512",
+    "C:\\Users\\marvi\\.nuget\\packages\\runtime.unix.system.private.uri\\4.3.0\\runtime.unix.system.private.uri.4.3.0.nupkg.sha512",
+    "C:\\Users\\marvi\\.nuget\\packages\\runtime.unix.system.runtime.extensions\\4.3.0\\runtime.unix.system.runtime.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\marvi\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\marvi\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\marvi\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
@@ -103,9 +104,9 @@
     "C:\\Users\\marvi\\.nuget\\packages\\system.text.encoding.extensions\\4.3.0\\system.text.encoding.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\marvi\\.nuget\\packages\\system.text.regularexpressions\\4.3.0\\system.text.regularexpressions.4.3.0.nupkg.sha512",
     "C:\\Users\\marvi\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
-    "C:\\Users\\marvi\\.nuget\\packages\\system.threading.overlapped\\4.3.0\\system.threading.overlapped.4.3.0.nupkg.sha512",
     "C:\\Users\\marvi\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\marvi\\.nuget\\packages\\system.threading.tasks.extensions\\4.3.0\\system.threading.tasks.extensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\marvi\\.nuget\\packages\\system.threading.threadpool\\4.3.0\\system.threading.threadpool.4.3.0.nupkg.sha512",
     "C:\\Users\\marvi\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\marvi\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\marvi\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
@@ -117,9 +118,9 @@
     "C:\\Users\\marvi\\.nuget\\packages\\xunit.extensibility.core\\2.4.2\\xunit.extensibility.core.2.4.2.nupkg.sha512",
     "C:\\Users\\marvi\\.nuget\\packages\\xunit.extensibility.execution\\2.4.2\\xunit.extensibility.execution.2.4.2.nupkg.sha512",
     "C:\\Users\\marvi\\.nuget\\packages\\xunit.runner.console\\2.4.2\\xunit.runner.console.2.4.2.nupkg.sha512",
-    "C:\\Users\\marvi\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.8\\microsoft.netcore.app.runtime.win-x64.6.0.8.nupkg.sha512",
-    "C:\\Users\\marvi\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.8\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.8.nupkg.sha512",
-    "C:\\Users\\marvi\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.8\\microsoft.aspnetcore.app.runtime.win-x64.6.0.8.nupkg.sha512"
+    "C:\\Users\\marvi\\.nuget\\packages\\microsoft.netcore.app.runtime.linux-x64\\6.0.8\\microsoft.netcore.app.runtime.linux-x64.6.0.8.nupkg.sha512",
+    "C:\\Users\\marvi\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.linux-x64\\6.0.8\\microsoft.aspnetcore.app.runtime.linux-x64.6.0.8.nupkg.sha512",
+    "C:\\Users\\marvi\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\6.0.8\\microsoft.netcore.app.host.linux-x64.6.0.8.nupkg.sha512"
   ],
   "logs": []
 }
